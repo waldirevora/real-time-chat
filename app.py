@@ -20,6 +20,18 @@ def index():
     """
     return render_template("index.html")
 
+@socketio.on("message")
+def handle_message(message):
+    """
+    Recebe uma mensagem enviada por um cliente e a retrasnmite 
+    para todos os clientes conectados ao chat.
+
+    Args:
+        message (srt): mensagem enviada pelo usuario
+    """
+
+    # Envia a mensagem para todos os clientes conectados.
+    socketio.send(message)
 
 if __name__ == "__main__":
     # Inicia o servidor Flask com suporte ao Socket.IO.

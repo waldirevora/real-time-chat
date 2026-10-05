@@ -23,11 +23,11 @@ def index():
 @socketio.on("message")
 def handle_message(message):
     """
-    Recebe uma mensagem enviada por um cliente e a retrasnmite 
+    Recebe uma mensagem enviada por um cliente e a retransmite 
     para todos os clientes conectados ao chat.
 
     Args:
-        message (srt): mensagem enviada pelo usuario
+        message (str): mensagem enviada pelo usuario
     """
 
     # Envia a mensagem para todos os clientes conectados.
